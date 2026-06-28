@@ -184,8 +184,17 @@ The application uses five primary tables:
 
 ---
 
+
 ## Future Improvements
 
+- Cache and serve tool logos from Supabase Storage instead of relying on third-party image URLs.
+- Schedule automatic scraping using cron jobs or Supabase Edge Functions.
+- Add user authentication to support personalized favorites.
+- Improve search with full-text search and fuzzy matching.
+- Add sorting options (Newest, Popular, Free, etc.).
+- Track scraping history and tool updates over time.
+- Add skeleton loaders and enhanced error handling.
+- Deploy the application using Vercel (Frontend) and Render/Railway (Backend).
 - User authentication
 - User-specific favorites
 - AI-powered recommendations
@@ -195,6 +204,10 @@ The application uses five primary tables:
 - Cloud deployment
 
 ---
+
+## Known Limitation
+
+Some tool logos are hosted on AIxploria, which blocks external image requests (HTTP 403). The application currently falls back to a generated placeholder icon. A production-ready solution would download these logos during scraping and serve them from Supabase Storage.
 
 ## Author
 
