@@ -5,15 +5,38 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 console.log("API_URL =", API_URL);
 
+// async function fetchAPI<T>(path: string, options?: RequestInit): Promise<T> {
+//   const res = await fetch(`${API_URL}${path}`, {
+//     ...options,
+//     headers: { "Content-Type": "application/json", ...options?.headers },
+//   });
+//   if (!res.ok) {
+//     const err = await res.json().catch(() => ({ detail: res.statusText }));
+//     throw new Error(err.detail || "API request failed");
+//   }
+//   return res.json();
+// }
 async function fetchAPI<T>(path: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(`${API_URL}${path}`, {
+  const url = `${API_URL}${path}`;
+
+  console.log("Fetching:", url);
+
+  const res = await fetch(url, {
     ...options,
-    headers: { "Content-Type": "application/json", ...options?.headers },
+    headers: {
+      "Content-Type": "application/json",
+      ...options?.headers,
+    },
   });
+
+  console.log("Status:", res.status);
+
   if (!res.ok) {
-    const err = await res.json().catch(() => ({ detail: res.statusText }));
-    throw new Error(err.detail || "API request failed");
+    const text = await res.text();
+    console.log("Body:", text);
+    throw new Error(`HTTP ${res.status}: ${text}`);
   }
+
   return res.json();
 }
 
