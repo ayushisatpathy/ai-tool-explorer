@@ -179,13 +179,34 @@ def scrape(run_id: str) -> int:
             except Exception as e:
              print("Card skipped:", e)
 
-        supabase.table("scrape_runs").update(
-            {
-                "status": "completed",
-                "completed_at": datetime.now(timezone.utc).isoformat(),
-                "tools_scraped": tools_scraped,
-            }
-        ).eq("id", run_id).execute()
+        # supabase.table("scrape_runs").update(
+        #     {
+        #         "status": "completed",
+        #         "completed_at": datetime.now(timezone.utc).isoformat(),
+        #         "tools_scraped": tools_scraped,
+        #     }
+        # ).eq("id", run_id).execute()
+        print("=" * 60)
+        print("Finished processing all tools")
+        print(f"Tools scraped: {tools_scraped}")
+        print("Updating scrape_runs to completed...")
+
+        result = (
+            supabase.table("scrape_runs")
+            .update(
+                {
+                    "status": "completed",
+                    "completed_at": datetime.now(timezone.utc).isoformat(),
+                    "tools_scraped": tools_scraped,
+                }
+            )
+            .eq("id", run_id)
+            .execute()
+        )
+
+        print("Update result:", result)
+        print("Scrape completed successfully")
+        print("=" * 60)
 
     except Exception as exc:
         print("SCRAPER ERROR:", exc)

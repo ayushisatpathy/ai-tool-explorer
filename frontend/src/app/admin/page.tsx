@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { api } from "@/lib/api";
 import type { ScrapeRun } from "@/types";
 import { formatDate } from "@/lib/utils";
+import { supabase } from "@/lib/supabase";
 
 const STATUS_STYLES: Record<string, string> = {
   running: "bg-yellow-100 text-yellow-800",
@@ -33,13 +34,35 @@ export default function AdminPage() {
     fetchRuns();
   }, [fetchRuns]);
 
-  // Poll for updates if a run is active
-  useEffect(() => {
-    const hasRunning = runs.some((r) => r.status === "running");
-    if (!hasRunning) return;
-    const id = setInterval(fetchRuns, 3000);
-    return () => clearInterval(id);
-  }, [runs, fetchRuns]);
+ useEffect(() => {
+  // Remove old channels (helps during Fast Refresh)
+  supabase.getChannels().forEach((channel) => {
+    supabase.removeChannel(channel);
+  });
+
+  const channel = supabase.channel(`scrape-runs-${crypto.randomUUID()}`);
+
+  channel
+    .on(
+      "postgres_changes",
+      {
+        event: "*",
+        schema: "public",
+        table: "scrape_runs",
+      },
+      (payload) => {
+        console.log("Scrape run changed:", payload);
+        fetchRuns();
+      }
+    )
+    .subscribe((status) => {
+      console.log("Scrape Runs Realtime:", status);
+    });
+
+  return () => {
+    supabase.removeChannel(channel);
+  };
+}, [fetchRuns]);
 
   async function handleScrape() {
     setScraping(true);

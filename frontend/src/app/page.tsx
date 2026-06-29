@@ -4,6 +4,7 @@ import { ToolCard } from "@/components/ToolCard";
 import { SearchBar } from "@/components/SearchBar";
 import { FilterBar } from "@/components/FilterBar";
 import { Pagination } from "@/components/Pagination";
+import { RealtimeListener } from "@/components/RealtimeListener";
 
 interface SearchParams {
   search?: string;
@@ -37,6 +38,7 @@ export default async function HomePage({
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <RealtimeListener />
       {/* Hero */}
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-gray-900 mb-3">

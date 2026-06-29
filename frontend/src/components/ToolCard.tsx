@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Tool } from "@/types";
 import { PricingBadge } from "./PricingBadge";
 import { api } from "@/lib/api";
@@ -14,7 +14,13 @@ interface Props {
 
 export function ToolCard({ tool, onFavoriteChange }: Props) {
   const [isFav, setIsFav] = useState(tool.is_favorite);
-  const [loading, setLoading] = useState(false);
+const [loading, setLoading] = useState(false);
+const [imageError, setImageError] = useState(false);
+
+// Reset image state if a different tool is rendered
+useEffect(() => {
+  setImageError(false);
+}, [tool.logo_url]);
 
   async function handleFavorite(e: React.MouseEvent) {
     e.preventDefault();
@@ -39,20 +45,23 @@ export function ToolCard({ tool, onFavoriteChange }: Props) {
       {/* Header */}
       <div className="flex items-start gap-3 p-4">
         <div className="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center shrink-0 overflow-hidden">
-          {tool.logo_url ? (
-            <Image
-              src={tool.logo_url}
-              alt={tool.name}
-              width={48}
-              height={48}
-              className="object-contain"
-              unoptimized
-            />
-          ) : (
-            <span className="text-xl font-bold text-indigo-400">
-              {tool.name.charAt(0).toUpperCase()}
-            </span>
-          )}
+          {tool.logo_url && !imageError ? (
+  <Image
+    src={tool.logo_url}
+    alt={tool.name}
+    width={48}
+    height={48}
+    className="object-contain"
+    unoptimized
+    onError={() => setImageError(true)}
+  />
+) : (
+  <div className="w-full h-full flex items-center justify-center bg-indigo-100">
+    <span className="text-lg font-bold text-indigo-600">
+      {tool.name.charAt(0).toUpperCase()}
+    </span>
+  </div>
+)}
         </div>
 
         <div className="flex-1 min-w-0">
