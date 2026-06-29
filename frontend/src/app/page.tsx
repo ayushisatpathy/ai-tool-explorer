@@ -82,13 +82,15 @@
 //     </div>
 //   );
 // }
-export default function Home() {
+import { api } from "@/lib/api";
+
+export default async function Home() {
+  const data = await api.tools.list();
+
   return (
     <div>
-      Hello Vercel
-      <br />
-      API:
-      {process.env.NEXT_PUBLIC_API_URL}
+      <h1>Success</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   );
 }
