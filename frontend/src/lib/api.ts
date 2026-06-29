@@ -2,6 +2,9 @@ import type { Tool, ToolListResponse, Category, ScrapeRun, ScrapeResponse } from
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
+
+console.log("API_URL =", API_URL);
+
 async function fetchAPI<T>(path: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${API_URL}${path}`, {
     ...options,
