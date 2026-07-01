@@ -261,72 +261,96 @@ The application uses the following tables:
 ## Home Page
 
 ![Home Page](screenshots/01-homepage.png)
+<img width="1918" height="903" alt="Screenshot 2026-07-01 152556" src="https://github.com/user-attachments/assets/e3ed4bb8-7998-4673-aed7-06391ee52984" />
+
 
 ---
 
 ## Search Functionality
 
 ![Search](screenshots/02-search.png)
+<img width="1912" height="863" alt="Screenshot 2026-07-01 152647" src="https://github.com/user-attachments/assets/991c5c13-6807-4559-bcf0-6c92ab6c561e" />
+
 
 ---
 
 ## Category Dropdown
 
 ![Category Dropdown](screenshots/03-category-dropdown.png)
+<img width="1915" height="910" alt="Screenshot 2026-07-01 152722" src="https://github.com/user-attachments/assets/4329630b-325a-4603-b4c6-fa81b0316616" />
+
 
 ---
 
 ## Category Filter
 
 ![Category Filter](screenshots/04-category-filter.png)
+<img width="1918" height="903" alt="Screenshot 2026-07-01 152745" src="https://github.com/user-attachments/assets/1b92e7eb-473e-48ab-9d3f-1198da00b59f" />
+
 
 ---
 
 ## Favorites
 
 ![Favorites](screenshots/05-favorites.png)
+<img width="1918" height="897" alt="Screenshot 2026-07-01 152810" src="https://github.com/user-attachments/assets/ee7e22e3-54f5-434a-88d9-ebd9a705c94b" />
+
 
 ---
 
 ## Admin Dashboard
 
 ![Admin Dashboard](screenshots/06-admin-panel.png)
+<img width="1917" height="907" alt="Screenshot 2026-07-01 152844" src="https://github.com/user-attachments/assets/1d1a2570-ee4d-44f6-aba3-fb54395aa9b8" />
+
 
 ---
 
 ## Scraper Running
 
 ![Scraper Running](screenshots/07-scraper-running.png)
+<img width="1898" height="843" alt="Screenshot 2026-07-01 152920" src="https://github.com/user-attachments/assets/53c5bf94-8062-41d4-b78d-4a4089c87ded" />
+
 
 ---
 
 ## Scrape History
 
 ![Scrape History](screenshots/08-scrape-history.png)
+<img width="1127" height="403" alt="Screenshot 2026-07-01 153008" src="https://github.com/user-attachments/assets/1bdce205-59c5-42f9-8a49-50328ce588eb" />
+
 
 ---
 
 ## Tool Details
 
 ![Tool Details](screenshots/09-tool-details.png)
+<img width="1895" height="902" alt="Screenshot 2026-07-01 153017" src="https://github.com/user-attachments/assets/55856c82-36ff-444f-8396-fe24385f5303" />
+
 
 ---
 
 ## Tool Details (Example)
 
 ![Tool Details 2](screenshots/10-tool-details-2.png)
+<img width="1918" height="897" alt="Screenshot 2026-07-01 153116" src="https://github.com/user-attachments/assets/a63f52d5-bf03-4454-a939-eb6c68e731ae" />
+
 
 ---
 
 ## Supabase Database
 
 ![Supabase](screenshots/11-supabase.png)
+<img width="1893" height="802" alt="Screenshot 2026-07-01 153451" src="https://github.com/user-attachments/assets/8efad363-de5b-4fd5-b696-419d983f48e7" />
+
 
 ---
 
 ## Figma Design
 
 ![Figma](screenshots/12-figma-design.png)
+<img width="1896" height="863" alt="Screenshot 2026-07-01 153536" src="https://github.com/user-attachments/assets/1a2fae7d-51ee-4a67-82d9-e52c6b164fee" />
+
 
 ---
 
