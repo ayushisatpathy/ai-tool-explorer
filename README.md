@@ -256,6 +256,32 @@ The application uses the following tables:
 
 ---
 
+# AI Tool Explorer
+
+A full-stack web application that automatically scrapes AI tools from **AIxploria**, stores them in **Supabase**, and provides a searchable interface to browse, filter, and favorite AI tools.
+
+---
+
+#  Live Demo
+
+## Frontend (Vercel)
+
+🔗 **https://ai-tool-explorer-git-main-ayushisatpathys-projects.vercel.app/**
+
+## Backend API (Render)
+
+🔗 **https://ai-tool-explorer-backend.onrender.com/**
+
+### API Documentation (Swagger)
+
+🔗 **https://ai-tool-explorer-backend.onrender.com/docs**
+
+### Figma Design
+
+🔗 **https://www.figma.com/make/mADom0Xy3p41io01fZbxUL/AI-Tool-Explorer-Dashboard?t=VhA4iBiXnUGhHc41-1**
+
+---
+
 # Screenshots
 
 ## Home Page
@@ -416,11 +442,6 @@ https://ai-tool-explorer-backend.onrender.com/
 
 ---
 
-# Figma Design
-
-https://www.figma.com/make/mADom0Xy3p41io01fZbxUL/AI-Tool-Explorer-Dashboard?t=VhA4iBiXnUGhHc41-1
-
----
 
 # Author
 
