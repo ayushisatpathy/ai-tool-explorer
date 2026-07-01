@@ -317,18 +317,12 @@ The application uses the following tables:
 ## Scrape History
 
 ![Scrape History](screenshots/08-scrape-history.png)
-<img width="1127" height="403" alt="Screenshot 2026-07-01 153008" src="https://github.com/user-attachments/assets/1bdce205-59c5-42f9-8a49-50328ce588eb" />
+<img width="1895" height="902" alt="Screenshot 2026-07-01 153017" src="https://github.com/user-attachments/assets/c489c086-f54c-49ab-9114-a876d63ab53b" />
 
-
----
-
-## Tool Details
-
-![Tool Details](screenshots/09-tool-details.png)
-<img width="1895" height="902" alt="Screenshot 2026-07-01 153017" src="https://github.com/user-attachments/assets/55856c82-36ff-444f-8396-fe24385f5303" />
 
 
 ---
+
 
 ## Tool Details (Example)
 
